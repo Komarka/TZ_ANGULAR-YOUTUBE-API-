@@ -1,0 +1,38 @@
+<div class="searchList">
+  <ul class="list-group list-group-flush">
+    <li
+      *ngFor="let video of videoList; trackBy: trackByFn"
+      class="list-group-item"
+    >
+      <div class="d-flex justify-content-between align-items-center">
+        <span>{{ video.snippet.title | shorter }}</span>
+        <div class="image__wrapper">
+          <img
+            class="cover__image"
+            [src]="
+              getImage(
+                video.id.videoId,
+                video.id.playlistId,
+                video.id.channelId
+              )
+            "
+          />
+          <img
+            class="play_button"
+            src="https://cdn.pixabay.com/photo/2016/02/01/12/33/play-1173551_960_720.png"
+            (click)="openVideo(video.id)"
+          />
+        </div>
+      </div>
+    </li>
+  </ul>
+  <div *ngIf="activeVideo" class="overlay" (click)="closeVideo($event)">
+    <div>
+      <youtube-player
+        [videoId]="activeVideo"
+        [height]="500"
+        [width]="800"
+      ></youtube-player>
+    </div>
+  </div>
+</div>

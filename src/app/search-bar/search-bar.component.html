@@ -1,0 +1,8 @@
+<div>
+  <input type="text" name="search" placeholder="Search.." (input)="onChange($event.target.value)">
+  <div>
+    <search-list *ngIf="showList" [videoList]="videoList"></search-list>
+    <ngx-spinner bdOpacity=0.9 bdColor="" size="medium" color="#ff7070" type="line-scale" fullScreen="false">
+    </ngx-spinner>
+  </div>
+</div>

@@ -1,0 +1,58 @@
+.searchList {
+  width: 50%;
+  margin: 1% auto;
+}
+
+img {
+  cursor: pointer;
+  width: 130px;
+  height: 130px;
+  transform: scale(1.1);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+
+.image__wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.image__wrapper .play_button {
+  position: absolute;
+  top: 40px;
+  left: 45px;
+  transition: all .2s linear;
+  cursor: pointer;
+  transform: translateX(-90px);
+  width: 40px;
+  height: 40px;
+}
+
+
+
+.image__wrapper:hover .play_button {
+  transform: translateX(0)
+}
+
+.image__wrapper:hover .cover__image {
+  filter: blur(3px);
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+.overlay {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  cursor: pointer
+}
